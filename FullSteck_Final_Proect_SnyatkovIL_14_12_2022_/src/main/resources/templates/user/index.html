@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/grid.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-5.2.2-dist/css/bootstrap.min.css}">
+</head>
+<body>
+    <header >
+        <div class="container">
+            <br>
+            <div class="row align-items-center text-center">
+                <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                    <h1 class="headerText">Магазин комплектующих <br>для профессиональных рабочих станций</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <br>
+        <div class="row align-items-center text-center">
+            <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                <h3>Главная страница магазина</h3>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="container px-5">
+            <div class="row gx-1">
+                <div class="col ">
+                    <div class="p-1 align-content-center">
+                        <div class="form-group">
+                            <div class="col-xxl-12 col-md-12 col-sm-12">
+                                <form method="get" th:action="@{/cart}">
+                                    <input type="submit" value="Корзина" class="btn btn-primary ramkaKnopki">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <!--                                border bg-light-->
+                    <div class="p-1 align-content-center">
+                        <div class="form-group">
+                            <div class="col-xxl-12 col-md-12 col-sm-12">
+                                <form method="get" th:action="@{/orders}">
+                                    <input type="submit" value="История заказов" class="btn btn-primary ramkaKnopki">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <!--                                border bg-light-->
+                    <div class="p-1 align-content-center">
+                        <div class="form-group">
+                            <div class="col-xxl-12 col-md-12 col-sm-12">
+                                <form method="get" th:action="@{/logout}">
+                                    <input type="submit" value="Выйти из личного кабинета" class="btn btn-primary ramkaKnopki">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--        </div>-->
+    </div>
+    <br>
+    <div class="container">
+        <div class="border border-success col-xxl-6 col-md-6 col-sm-6 offset-3 ramkaFormi">
+            <form th:method="POST" th:action="@{/product/search}">
+                <fieldset>
+                    <div class="row align-items-center text-center">
+                        <div class="col-xxl-12 col-md-12 col-sm-12 col-12">
+                            <legend>Выберите параметры для поиска и сортировки: </legend>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-xxl-10 col-md-10 col-sm-10 offset-1">
+                            <label for="search">Поиск по наименованию</label>
+                            <input name="search" id="search" th:value="*{value_search}" class="form-control">
+                        </div>
+                    </div>
+                     <div class="container px-5">
+                        <div class="row gx-1">
+                            <div class="col gy-4">
+                                <!--                                border bg-light-->
+                                <div class="p-1">
+                                    <p>Цена, ₽</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <!--                                border bg-light-->
+                                <div class="p-1">
+                                    <label for="ot">От</label>
+                                    <input type="text" name="ot" id="ot" th:value="*{value_price_ot}" class="form-control mb-2">
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <!--                                border bg-light-->
+                                <div class="p-1">
+                                    <label for="do">До</label>
+                                    <input type="text" name="do" id="do" th:value="*{value_price_do}" class="form-control mb-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-xxl-10 col-md-10 col-sm-10 offset-1">
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="ascending_price" name="price" value="sorted_by_ascending_price">
+                                    <label class="form-check-label" for="ascending_price">Отсортировать по возрастанию цены</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="descending_price" name="price" value="sorted_by_descending_price">
+                                    <label class="form-check-label" for="descending_price">Отсортировать по убыванию цены</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="bez_price" name="price" value="">
+                                    <label class="form-check-label" for="bez_price">Не учитывать</label>
+                                </div>
+                                <br>
+                                <br>
+
+                                <p>Категория товаров: </p>
+                                 <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="processors" name="contact" value="processors">
+                                    <label for="processors">Процессоры</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="videocard" name="contact" value="videocard">
+                                    <label for="videocard">Видеокарты</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="matherboard" name="contact" value="matherboard">
+                                    <label for="matherboard">Материнские платы</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="memory" name="contact" value="memory">
+                                    <label for="memory">Модули памяти</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="pustoy" name="contact" value="">
+                                    <label for="pustoy">Не учитывать</label>
+                                </div>
+                                <br>
+                                <br>
+                             </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xxl-10 col-md-10 col-sm-10 offset-1">
+                                <input type="submit" value="Найти" class="btn btn-primary">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <br>
+            <div class="form-group">
+                <div class="col-xxl-10 col-md-10 col-sm-10 offset-1">
+                    <form method="get" th:action="@{/product}">
+                        <input type="submit" value="Сбросить поиск" class="btn btn-secondary">
+                    </form>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <br>
+        <div class="row align-items-center text-center">
+            <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                <h3>Результат поиска:</h3>
+            </div>
+        </div>
+        <br>
+    </div>
+    <div class="container">
+        <div class="grid_pologenie_user">
+            <div class="container">
+                <div class="grid_tovari_user">
+                    <div th:each="product : ${search_product}" class="grid_tovar_user">
+                        <div class="poziciya_kartinki_tovara_user">
+                            <div class="kartinka_tovara_user">
+                                <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="250px" height="300px">
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="poziciya_ssilki_tovara_user">
+                            <a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a>
+                         </div>
+                        <div class="poziciya_ceni_tovara_user">
+                            <p th:text="'Цена: ' + ${product.getPrice()} + ' руб.'"></p>
+                        </div>
+                        <div class="poziciya_ssilki_cart_user">
+                            <a th:href="@{/cart/add/{id}(id=${product.getId()})}">Добавить в корзину</a>
+                        </div>
+                        <div class="poziciya_ssilki_cart_user">
+                             <a href="/cart">Перейти в корзину</a>
+                        </div>
+                     </div>
+                </div>
+            </div>
+         </div>
+    </div>
+    <hr>
+    <div class="container">
+        <br>
+        <div class="row align-items-center text-center">
+            <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                <h3>Доступные товары:</h3>
+            </div>
+        </div>
+        <br>
+    </div>
+    <div class="container">
+        <div class="grid_pologenie_user">
+            <div class="container">
+                <div class="grid_tovari_user">
+                    <div th:each="product : ${products}" class="grid_tovar_user">
+                        <div class="poziciya_kartinki_tovara_user">
+                            <div class="kartinka_tovara_user">
+                                <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="250px" height="300px">
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="poziciya_ssilki_tovara_user">
+                            <a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a>
+                        </div>
+                        <div class="poziciya_ceni_tovara_user">
+                            <p th:text="'Цена: ' + ${product.getPrice()} + ' руб.'"></p>
+                        </div>
+                        <div class="poziciya_ssilki_cart_user">
+                            <a th:href="@{/cart/add/{id}(id=${product.getId()})}">Добавить в корзину</a>
+                        </div>
+                        <div class="poziciya_ssilki_cart_user">
+                            <a href="/cart">Перейти в корзину</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <script th:src="@{/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/js/index.js}" ></script>
+</body>
+</html>

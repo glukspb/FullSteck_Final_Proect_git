@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина товаров</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/grid.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-5.2.2-dist/css/bootstrap.min.css}">
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+</head>
+<body>
+    <header >
+        <!--    <h1 style="text-align: center">Магазин комплектующих <br>для профессиональных рабочих станций</h1>-->
+        <div class="container">
+            <br>
+            <div class="row align-items-center text-center">
+                <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                    <h1 class="headerText">Магазин комплектующих <br>для профессиональных рабочих станций</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--    <h3>Корзина товаров</h3>-->
+    <div class="container">
+        <!--        <br>-->
+        <br>
+        <div class="row align-items-center text-center">
+            <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                <h3>Корзина товаров</h3>
+            </div>
+        </div>
+        <!--        <br>-->
+    </div>
+    <br>
+    <div class="container">
+        <div class="grid_pologenie_user">
+            <div class="container">
+                <div class="grid_tovari_user">
+                    <div th:each="product : ${cart_product}" class="grid_tovar_user">
+                        <div class="poziciya_kartinki_tovara_user">
+<!--                            <br>-->
+<!--                                    <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="250px" height="250px">-->
+<!--                            <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="300px">-->
+                            <div class="kartinka_tovara_user">
+                                <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="250px" height="300px">
+                            </div>
+                        </div>
+                        <br>
+<!--                        <a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a>-->
+                        <div class="poziciya_ssilki_tovara_user">
+                            <!--                                    <div class="poziciya_ssilki_tovara">-->
+                            <a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a>
+                            <!--                                    </div>-->
+                        </div>
+<!--                        <p th:text="'Цена: ' + ${product.getPrice()}"></p>-->
+                        <div class="poziciya_ceni_tovara_user">
+                            <p th:text="'Цена: ' + ${product.getPrice()} + ' руб.'"></p>
+                        </div>
+<!--                        <a th:href="@{/cart/delete/{id}(id=${product.getId()})}">Удалить</a>-->
+                        <div class="poziciya_ssilki_cart_user">
+                            <!--                                    <div class="poziciya_ssilki_tovara">-->
+                            <a th:href="@{/cart/delete/{id}(id=${product.getId()})}">Удалить</a>
+<!--                            <a href="/cart">Перейти в корзину</a>-->
+                            <!--                                    </div>-->
+                        </div>
+<!--                        <hr>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--    <h3 th:text="'Итоговая цена: ' + ${price}"></h3>-->
+    <div class="container">
+        <!--        <br>-->
+        <br>
+        <div class="row align-items-center text-center">
+            <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                <h3 th:text="'Итоговая цена: ' + ${price}"></h3>
+            </div>
+        </div>
+        <!--        <br>-->
+    </div>
+<!--    <a href="/index">Продолжить выбор товаров</a>-->
+<!--    <br>-->
+    <br>
+<!--    <a href="/order/create">Оформить заказ</a>-->
+    <div class="container">
+        <!--        <div>-->
+        <div class="container px-5">
+            <div class="row gx-1">
+                <div class="col ">
+                    <div class="p-1 align-content-center">
+                        <div class="form-group">
+                            <div class="col-xxl-12 col-md-12 col-sm-12">
+                                <form method="get" th:action="@{/index}">
+                                    <input type="submit" value="Продолжить выбор товаров" class="btn btn-primary ramkaKnopki">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <!--                                border bg-light-->
+                    <div class="p-1 align-content-center">
+                        <div class="form-group">
+                            <div class="col-xxl-12 col-md-12 col-sm-12">
+                                <form method="get" th:action="@{/order/create}">
+                                    <input type="submit" value="Оформить заказ" class="btn btn-primary ramkaKnopki">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--        </div>-->
+    </div>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+    <script th:src="@{/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/js/index.js}" ></script>
+</body>
+</html>

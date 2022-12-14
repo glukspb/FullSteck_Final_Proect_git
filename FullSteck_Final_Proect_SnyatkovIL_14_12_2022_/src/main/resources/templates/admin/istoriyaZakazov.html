@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>История заказов (администратор)</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/grid.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-5.2.2-dist/css/bootstrap.min.css}">
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+</head>
+<body>
+    <header >
+        <!--    <h1 style="text-align: center">Магазин комплектующих <br>для профессиональных рабочих станций</h1>-->
+        <div class="container">
+            <br>
+            <div class="row align-items-center text-center">
+                <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                    <h1 class="headerText">Магазин комплектующих <br>для профессиональных рабочих станций</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <br>
+<!--    &lt;!&ndash;<a href="../admin/">Вернуться в личный кабинет администратора</a>&ndash;&gt;-->
+<!--    <form method="get" th:action="@{../admin/}">-->
+<!--        <input type="submit" value="Вернуться в личный кабинет администратора">-->
+<!--    </form>-->
+<!--    <br>-->
+<!--    <form method="get" th:action="@{/admin/istoriyaZakazov}">-->
+<!--        <input type="submit" value="Вернуться в история заказов">-->
+<!--    </form>-->
+<!--    <br>-->
+<!--    <br>-->
+    <!--    <a href="/index">На главную страницу</a>-->
+    <div class="container">
+        <div class="container px-5">
+            <div class="row gx-1">
+                <div class="col ">
+                    <div class="p-1 align-content-center">
+                        <div class="form-group">
+                            <div class="col-xxl-12 col-md-12 col-sm-12">
+                                <form method="get" th:action="@{../admin/}">
+                                    <input type="submit" value="Вернуться в личный кабинет администратора" class="btn btn-primary ramkaKnopki">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <!--                                border bg-light-->
+                    <div class="p-1 align-content-center">
+                        <div class="form-group">
+                            <div class="col-xxl-12 col-md-12 col-sm-12">
+                                <form method="get" th:action="@{/admin/istoriyaZakazov}">
+                                    <input type="submit" value="Вернуться в история заказов" class="btn btn-primary ramkaKnopki">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    <h3>История заказов (администратор)</h3>-->
+    <div class="container">
+        <br>
+        <div class="row align-items-center text-center">
+            <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                <h3>История заказов (администратор)</h3>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!--<hr> type="text" size=4-->
+    <div class="container">
+        <div class="border border-success col-xxl-6 col-md-6 col-sm-6 offset-3 ramkaFormi">
+            <form th:method="POST" th:action="@{/admin/istoriyaZakazov}">
+                <fieldset>
+<!--                    <legend>Выберите параметр для поиска заказов:</legend>-->
+                    <div class="row align-items-center text-center">
+                        <div class="col-xxl-12 col-md-12 col-sm-12 col-12">
+                            <legend>Выберите параметр для сортировки: </legend>
+                        </div>
+                    </div>
+                    <br>
+<!--                        <label for="order_search">Поиск по 4 последним буквам/цифрам заказа (order_number):</label>-->
+<!--                        <input type="text" maxlength="4" name="order_search" id="order_search" th:value="*{value_search_order}">-->
+                    <div class="form-row">
+                        <div class="form-group col-xxl-10 col-md-10 col-sm-10 offset-1">
+                            <label for="order_search">Поиск по 4 последним буквам/цифрам заказа (order_number):</label>
+                            <input type="text" maxlength="4" name="order_search" id="order_search" th:value="*{value_search_order}" class="form-control">
+                        </div>
+                    </div>
+                        <br>
+<!--                        <br>-->
+<!--                        <input type="submit" value="Найти">-->
+                    <div class="form-group">
+                        <div class="col-xxl-10 col-md-10 col-sm-10 offset-1">
+                            <input type="submit" value="Найти" class="btn btn-primary">
+                        </div>
+                    </div>
+                    <br>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <!--<hr>-->
+<!--    <h3>Результат (найденные заказы)</h3>-->
+    <br>
+    <div class="container">
+        <!--        <br>-->
+        <br>
+        <div class="row align-items-center text-center">
+            <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                <h3>Результат (найденные заказы):</h3>
+            </div>
+        </div>
+        <br>
+    </div>
+    <!--<div th:each="search_orderShapka : ${search_ordersShapkiList}">-->
+    <div class="container">
+        <div class="grid_pologenie_user_orders">
+            <div class="container">
+                <div class="grid_orders_user">
+                    <div th:each="search_orderShapka : ${search_ordersShapkiList_000}" class="grid_order_user">
+                        <br>
+                    <!--    <h3 th:text="'Заказ № ' + ${search_orderShapka.getNumber()}"></h3>-->
+                        <h3 th:text="'Заказ № ' + ${search_orderShapka.getOrderNumber()}"></h3>
+<!--                        <a th:href="@{/admin/order/info/{id}(id=${search_orderShapka.getId()})}" th:text="'Открыть заказ'"></a>-->
+<!--                        <a th:href="@{/admin/order/delete/{id}(id=${search_orderShapka.getId()})}" th:text="'Удалить заказ'"></a>-->
+                        <div class="container">
+                            <!--        <div>-->
+                            <div class="container px-5">
+                                <div class="row gx-1">
+                                    <div class="col ">
+                                        <div class="p-1 align-content-center">
+                                            <div class="form-group">
+                                                <div class="col-xxl-12 col-md-12 col-sm-12">
+                                                    <form method="get" th:action="@{/admin/order/info/{id}(id=${search_orderShapka.getId()})}">
+                                                        <input type="submit" value="Открыть заказ" class="btn btn-primary ramkaKnopki">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <!--                                border bg-light-->
+                                        <div class="p-1 align-content-center">
+                                            <div class="form-group">
+                                                <div class="col-xxl-12 col-md-12 col-sm-12">
+                                                    <form method="post" th:action="@{/admin/order/delete/{id}(id=${search_orderShapka.getId()})}">
+                                                        <input type="submit" value="Удалить заказ" class="btn btn-primary ramkaKnopki">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--        </div>-->
+                        </div>
+                    <!--    <form method="get" th:action="@{/admin/order/info/{id}(id=${search_orderShapka.getId()})}">-->
+                    <!--        <input type="submit" value="Открыть заказ">-->
+                    <!--    </form>-->
+                    <!--    <br>-->
+                    <!--    <form method="post" th:action="@{/admin/order/delete/{id}(id=${search_orderShapka.getId()})}">-->
+                    <!--        <input type="submit" value="Удалить заказ">-->
+                    <!--    </form>-->
+                    <!--    <a th:href="@{/infoOrderAdmin/{id}(id=${search_orderShapka.getId()})}" th:text="'Заказ № ' + ${search_orderShapka.getNumber()}"></a>-->
+<!--                        <p th:text="'Покупатель: ' + ${search_orderShapka.getPerson().getLogin()}"></p>-->
+<!--                        <p th:text="'Сумма всего: ' + ${search_orderShapka.getPriceTotal()} + ' руб.'"></p>-->
+<!--                        <p th:text="'Дата заказа: ' + ${#temporals.format(search_orderShapka.getDateTime(), 'dd-MMM-yyyy')}"></p>-->
+<!--                        <p th:text="'Статус: ' + ${search_orderShapka.getStatusOrder().getName()}"></p>-->
+                        <div class="grid_order_dannie_user">
+                             <p th:text="'Покупатель: ' + ${search_orderShapka.getPerson().getLogin()}"></p>
+                            <p th:text="'Сумма всего: ' + ${search_orderShapka.getPriceTotal()} + ' руб.'"></p>
+                            <p th:text="'Дата заказа: ' + ${#temporals.format(search_orderShapka.getDateTime(), 'dd-MMM-yyyy')}"></p>
+                            <p th:text="'Статус: ' + ${search_orderShapka.getStatusOrder().getName()}"></p>
+                        </div>
+                    <!--    <hr>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <br>
+    <br>
+
+    <!--<h3>Все заказы</h3>-->
+    <!--<div th:each="order : ${orders}">-->
+    <!--    <h3 th:text="'Заказ № ' + ${order.getNumber()}"></h3>-->
+    <!--&lt;!&ndash;    <p th:text="'Покупатель: ' + ${order.getPerson().getLogin()}"></p>&ndash;&gt;-->
+    <!--&lt;!&ndash;    <img th:src="'/img/' + ${order.getProduct().imageList[0].getFileName()}" width="300px">&ndash;&gt;-->
+    <!--&lt;!&ndash;    <p th:text="'Наименование: ' + ${order.getProduct().getTitle()}"></p>&ndash;&gt;-->
+    <!--&lt;!&ndash;    <p th:text="'Количество: ' + ${order.getCount()}"></p>&ndash;&gt;-->
+    <!--&lt;!&ndash;    <p th:text="'Цена: ' + ${order.getPrice()}"></p>&ndash;&gt;-->
+    <!--&lt;!&ndash;    <p th:text="'Дата заказа: ' + ${#temporals.format(order.getDateTime(), 'dd-MMM-yyyy')}"></p>&ndash;&gt;-->
+    <!--&lt;!&ndash;    <p th:text="'Статус: ' + ${order.getStatus()}"></p>&ndash;&gt;-->
+    <!--    <hr>-->
+    <!--</div>-->
+
+<!--    <h3>Все заказы (шапки, без строк)</h3>-->
+    <br>
+    <div class="container">
+        <!--        <br>-->
+        <br>
+        <div class="row align-items-center text-center">
+            <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                <h3>Все заказы (шапки, без строк):</h3>
+            </div>
+        </div>
+        <br>
+    </div>
+    <div class="container">
+        <div class="grid_pologenie_user_orders">
+            <div class="container">
+                <div class="grid_orders_user">
+                    <div th:each="orderShapka : ${ordersShapki}" class="grid_order_user">
+                        <br>
+                    <!--    <h3 th:text="'Заказ № ' + ${orderShapka.getNumber()}"></h3>-->
+                        <h3 th:text="'Заказ № ' + ${orderShapka.getOrderNumber()}"></h3>
+                    <!--    <a th:href="@{/admin/order/info/{id}(id=${orderShapka.getId()})}" th:text="'Заказ № ' + ${orderShapka.getNumber()}"></a> + '  длина строки  ' + ${orderShapka.getNumber().length()}-->
+<!--                        <a th:href="@{/admin/order/info/{id}(id=${orderShapka.getId()})}" th:text="'Открыть заказ'"></a>-->
+<!--                        <a th:href="@{/admin/order/delete/{id}(id=${orderShapka.getId()})}" th:text="'Удалить заказ'"></a>-->
+                        <div class="container">
+                            <!--        <div>-->
+                            <div class="container px-5">
+                                <div class="row gx-1">
+                                    <div class="col ">
+                                        <div class="p-1 align-content-center">
+                                            <div class="form-group">
+                                                <div class="col-xxl-12 col-md-12 col-sm-12">
+                                                    <form method="get" th:action="@{/admin/order/info/{id}(id=${orderShapka.getId()})}">
+                                                        <input type="submit" value="Открыть заказ" class="btn btn-primary ramkaKnopki">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <!--                                border bg-light-->
+                                        <div class="p-1 align-content-center">
+                                            <div class="form-group">
+                                                <div class="col-xxl-12 col-md-12 col-sm-12">
+                                                    <form method="post" th:action="@{/admin/order/delete/{id}(id=${orderShapka.getId()})}">
+                                                        <input type="submit" value="Удалить заказ" class="btn btn-primary ramkaKnopki">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--        </div>-->
+                        </div>
+                        <div class="grid_order_dannie_user">
+                            <!--                            <div class="poziciya_cena_ordera_user">-->
+<!--                            <a th:href="@{/infoOrder/{id}(id=${orderShapka.getId()})}" th:text="'Заказ № ' + ${orderShapka.getOrderNumber()}"></a>-->
+<!--                            <br>-->
+                            <p th:text="'Покупатель: ' + ${orderShapka.getPerson().getLogin()}"></p>
+                            <p th:text="'Сумма всего: ' + ${orderShapka.getPriceTotal()} + ' руб.'"></p>
+                            <p th:text="'Дата заказа: ' + ${#temporals.format(orderShapka.getDateTime(), 'dd-MMM-yyyy')}"></p>
+                            <p th:text="'Статус: ' + ${orderShapka.getStatusOrder().getName()}"></p>
+                            <!--                            </div>-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+    <script th:src="@{/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/js/index.js}" ></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список товаров</title>
+</head>
+<body>
+<br>
+<br>
+<a href="/authentication/login">Войти в личный кабинет/зарегистрироваться</a>
+<br>
+<a href="/index">На главную страницу</a>
+<br>
+<br>
+<form th:method="POST" th:action="@{/product/search}">
+    <fieldset>
+        <legend>Выберите параметр для сортировка: </legend>
+        <br>
+        <label for="search">Поиск по наименованию</label>
+        <input name="search" id="search" th:value="*{value_search}">
+        <br>
+        <p>Цена, ₽</p>
+        <label for="ot">От</label>
+        <input type="text" name="ot" id="ot" th:value="*{value_price_ot}">
+        <label for="do">До</label>
+        <input type="text" name="do" id="do" th:value="*{value_price_do}">
+        <br>
+        <br>
+        <div>
+            <label for="ascending_price">Отсортировать по возрастанию цены</label>
+            <input type="radio" id="ascending_price" name="price" value="sorted_by_ascending_price">
+            <br>
+            <br>
+            <label for="descending_price">Отсортировать по убыванию цены</label>
+            <input type="radio" id="descending_price" name="price" value="sorted_by_descending_price">
+            <br>
+            <br>
+            <p>Категория товаров: </p>
+            <!--            <label for="furniture">Мебель</label>-->
+            <!--            <input type="radio" id="furniture" name="contact" value="furniture">-->
+            <!--            <label for="appliances">Бытовая техника</label>-->
+            <!--            <input type="radio" id="appliances" name="contact" value="appliances">-->
+            <!--            <label for="clothes">Одежда</label>-->
+            <!--            <input type="radio" id="clothes" name="contact" value="clothes">-->
+            <label for="processors">Процессоры</label>
+            <input type="radio" id="processors" name="contact" value="processors">
+            <label for="videocard">Видеокарты</label>
+            <input type="radio" id="videocard" name="contact" value="videocard">
+            <label for="matherboard">Материнские платы</label>
+            <input type="radio" id="matherboard" name="contact" value="matherboard">
+            <label for="memory">Модули памяти</label>
+            <input type="radio" id="memory" name="contact" value="memory">
+            <!--            <label for="power">Блоки питания</label>-->
+            <!--            <input type="radio" id="power" name="contact" value="power">-->
+            <br>
+            <br>
+            <input type="submit" value="Найти">
+        </div>
+    </fieldset>
+    <br>
+</form>
+<!--<br> th:value="*{value_contact}" th:value="*{value_price}"  -->
+<br>
+
+<h3>Результат</h3>
+<div th:each="product : ${search_product}">
+    <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="300px">
+    <br>
+    <a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a>
+    <p th:text="'Цена: ' + ${product.getPrice()}"></p>
+    <hr>
+</div>
+<hr>
+
+<h3>Доступные товары</h3>
+<!--<h3>Доступные товары</h3>-->
+<div th:each="product : ${products}">
+    <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="300px">
+    <br>
+    <a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a>
+
+<!--    <p th:text="'Наименование: '+ ${product.getTitle()}"></p>-->
+<!--    <p th:text="'Описание : '+ ${product.getDescription()}"></p>-->
+    <p th:text="'Цена: '+ ${product.getPrice()} + ' руб.'"></p>
+<!--    <p th:text="'Город: '+ ${product.getCity()}"></p>-->
+<!--    <p th:text="'Продавец: '+ ${product.getSeller()}"></p>-->
+    <hr>
+</div>
+</body>
+</html>

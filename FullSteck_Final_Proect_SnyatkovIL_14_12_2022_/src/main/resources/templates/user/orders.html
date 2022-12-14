@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Заказы</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/grid.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-5.2.2-dist/css/bootstrap.min.css}">
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+</head>
+<body>
+    <header >
+        <!--    <h1 style="text-align: center">Магазин комплектующих <br>для профессиональных рабочих станций</h1>-->
+        <div class="container">
+            <br>
+            <div class="row align-items-center text-center">
+                <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                    <h1 class="headerText">Магазин комплектующих <br>для профессиональных рабочих станций</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--<br>-->
+    <!--<a href="/index">Продолжить выбор товаров</a>-->
+    <!--<br>-->
+    <br>
+<!--    <a href="/index">На главную страницу</a>-->
+    <div class="container">
+        <!--        <div>-->
+        <div class="container px-5">
+            <div class="row gx-1">
+                <div class="col ">
+                    <div class="p-1 align-content-center">
+                        <div class="form-group">
+                            <div class="col-xxl-12 col-md-12 col-sm-12">
+                                <form method="get" th:action="@{/index}">
+                                    <input type="submit" value="Продолжить выбор товаров" class="btn btn-primary ramkaKnopki">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <!--                                border bg-light-->
+                    <div class="p-1 align-content-center">
+                        <div class="form-group">
+                            <div class="col-xxl-12 col-md-12 col-sm-12">
+                                <form method="get" th:action="@{/index}">
+                                    <input type="submit" value="На главную страницу" class="btn btn-primary ramkaKnopki">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--        </div>-->
+    </div>
+<!--    <br>-->
+<!--    <hr>-->
+<!--    <h3>Заказы</h3>-->
+    <div class="container">
+        <!--        <br>-->
+        <br>
+        <div class="row align-items-center text-center">
+            <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                <h3>Заказы</h3>
+            </div>
+        </div>
+        <!--        <br>-->
+    </div>
+<!--    <hr>-->
+    <!--<div th:each="order : ${orders}">-->
+    <!--    <h3 th:text="'Заказ № ' + ${order.getNumber()}"></h3>-->
+    <!--    <img th:src="'/img/' + ${order.getProduct().imageList[0].getFileName()}" width="300px">-->
+    <!--    <p th:text="'Наименование: ' + ${order.getProduct().getTitle()}"></p>-->
+    <!--    <p th:text="'Количество: ' + ${order.getCount()}"></p>-->
+    <!--    <p th:text="'Цена: ' + ${order.getPrice()}"></p>-->
+    <!--    <p th:text="'Дата заказа: ' + ${#temporals.format(order.getDateTime(), 'dd-MMM-yyyy')}"></p>-->
+    <!--    <p th:text="'Статус: ' + ${order.getStatus()}"></p>-->
+    <!--    <hr>-->
+    <!--</div>-->
+    <!--<h3>Заказы2</h3>-->
+    <div class="container">
+        <div class="grid_pologenie_user_orders">
+            <div class="container">
+                <div class="grid_orders_user">
+                    <!--                    <div th:each="product : ${cart_product}" class="grid_tovar_user">-->
+                    <div th:each="orderShapka : ${ordersShapki}" class="grid_order_user">
+<!--                        <div class="poziciya_kartinki_tovara_user">-->
+<!--                            &lt;!&ndash;                            <br>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                    <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="250px" height="250px">&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="300px">&ndash;&gt;-->
+<!--                            <div class="kartinka_tovara_user">-->
+<!--                                <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="250px" height="300px">-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <br>
+                        <!--                        <a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a>-->
+<!--                        <div class="poziciya_ordera_user">-->
+<!--                            &lt;!&ndash;                                    <div class="poziciya_ssilki_tovara">&ndash;&gt;-->
+<!--                            <a th:href="@{/infoOrder/{id}(id=${orderShapka.getId()})}" th:text="'Заказ № ' + ${orderShapka.getOrderNumber()}"></a>-->
+<!--                            &lt;!&ndash;                                    </div>&ndash;&gt;-->
+<!--                        </div>-->
+                        <!--                        <p th:text="'Цена: ' + ${product.getPrice()}"></p>-->
+                        <div class="grid_order_dannie_user">
+<!--                            <div class="poziciya_cena_ordera_user">-->
+                                <a th:href="@{/infoOrder/{id}(id=${orderShapka.getId()})}" th:text="'Заказ № ' + ${orderShapka.getOrderNumber()}"></a>
+                                <br>
+                                <p th:text="'Сумма всего: ' + ${orderShapka.getPriceTotal()} + ' руб.'"></p>
+                                <p th:text="'Дата заказа: ' + ${#temporals.format(orderShapka.getDateTime(), 'dd-MMM-yyyy')}"></p>
+                                <p th:text="'Статус: ' + ${orderShapka.getStatusOrder().getName()}"></p>
+<!--                            </div>-->
+
+                        </div>
+                         <div class="poziciya_ceni_tovara_user">
+                        </div>
+                        <div class="poziciya_ceni_tovara_user">
+                        </div>
+<!--                        <a th:href="@{/cart/delete/{id}(id=${product.getId()})}">Удалить</a>-->
+                        <!--                        <hr>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--    <div th:each="orderShapka : ${ordersShapki}">-->
+<!--    &lt;!&ndash;    <h3 th:text="'Заказ № ' + ${orderShapki.getNumber()}"></h3>&ndash;&gt;-->
+<!--    &lt;!&ndash;    <a th:href="@{/infoOrder/{id}(id=${orderShapka.getId()})}" th:text="'Заказ № ' + ${orderShapka.getNumber()}"></a>&ndash;&gt;-->
+<!--        <a th:href="@{/infoOrder/{id}(id=${orderShapka.getId()})}" th:text="'Заказ № ' + ${orderShapka.getOrderNumber()}"></a>-->
+<!--    &lt;!&ndash;    <img th:src="'/img/' + ${order.getProduct().imageList[0].getFileName()}" width="300px">&ndash;&gt;-->
+<!--    &lt;!&ndash;    <p th:text="'Наименование: ' + ${order.getProduct().getTitle()}"></p>&ndash;&gt;-->
+<!--    &lt;!&ndash;    <p th:text="'Количество: ' + ${order.getCount()}"></p>&ndash;&gt;-->
+<!--        <p th:text="'Сумма всего: ' + ${orderShapka.getPriceTotal()} + ' руб.'"></p>-->
+<!--        <p th:text="'Дата заказа: ' + ${#temporals.format(orderShapka.getDateTime(), 'dd-MMM-yyyy')}"></p>-->
+<!--    &lt;!&ndash;    <p th:text="'Статус: ' + ${orderShapka.getStatus()}"></p>&ndash;&gt;-->
+<!--        <p th:text="'Статус: ' + ${orderShapka.getStatusOrder().getName()}"></p>-->
+<!--        <hr>-->
+<!--    </div>-->
+
+<!--    <a href="/index">Продолжить выбор товаров</a>-->
+    <br>
+    <br>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+    <script th:src="@{/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/js/index.js}" ></script>
+</body>
+</html>

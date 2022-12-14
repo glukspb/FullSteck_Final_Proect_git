@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование данных пользователя</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/grid.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-5.2.2-dist/css/bootstrap.min.css}">
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+</head>
+<body>
+    <header >
+        <!--    <h1 style="text-align: center">Магазин комплектующих <br>для профессиональных рабочих станций</h1>-->
+        <div class="container">
+            <br>
+            <div class="row align-items-center text-center">
+                <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                    <h1 class="headerText">Магазин комплектующих <br>для профессиональных рабочих станций</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+<!--    <br>-->
+<!--    <form method="get" th:action="@{/admin/users}">-->
+<!--        <input type="submit" value="Вернуться в список пользователей">-->
+<!--    </form>-->
+    <br>
+    <div class="container">
+        <div class="container px-5">
+            <div class="row gx-1">
+                <div class="col ">
+                    <div class="p-1 align-content-center">
+                        <div class="form-group">
+                            <div class="col-xxl-12 col-md-12 col-sm-12">
+                                <form method="get" th:action="@{/admin/users}">
+                                    <input type="submit" value="Вернуться в список пользователей" class="btn btn-primary ramkaKnopki">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--                <div class="col">-->
+<!--                    &lt;!&ndash;                                border bg-light&ndash;&gt;-->
+<!--                    <div class="p-1 align-content-center">-->
+<!--                        <div class="form-group">-->
+<!--                            <div class="col-xxl-12 col-md-12 col-sm-12">-->
+<!--                                <form method="get" th:action="@{/admin/user/edit/{id}(id=${user.get().getId()})}">-->
+<!--                                    <input type="submit" value="Редактировать пользователя" class="btn btn-primary ramkaKnopki">-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+        </div>
+    </div>
+    <br>
+<!--    <h3>Редактирование данных пользователя</h3>-->
+    <div class="container">
+        <!--        <br>-->
+        <div class="row align-items-center text-center">
+            <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                <h3>Редактирование данных пользователя:</h3>
+            </div>
+        </div>
+    </div>
+    <!--<form method="get" th:action="@{/admin/user/edit/{id}(id=${user.get().getId()})}">-->
+    <!--    <input type="submit" value="Редактировать пользователя">-->
+    <!--</form>-->
+    <br>
+    <div class="container">
+        <div class="grid_pologenie_users_admin">
+            <div class="container">
+                <div class="grid_users_admin">
+                    <div class="grid_user_admin">
+                        <h3 th:text="'login: ' + ${user.get().getLogin()}"></h3>
+                        <p th:text="'id: ' + ${user.get().getId()}"></p>
+                        <p th:text="'role: ' + ${user.get().getRole()}"></p>
+                        <form th:method="POST" th:action="@{/admin/user/edit/{id}(id=${user.get().getId()})}" th:object="${user}">
+                            <div hidden>
+                                <label for="login">login: </label>
+                                <input type="text" th:field="*{login}" placeholder="login пользователя" id="login" readonly>
+                                <br>
+                                <label for="password">password: </label>
+                                <input type="text" th:field="*{password}" placeholder="password пользователя" id="password" readonly>
+                                <br>
+                            </div>
+                            <label for="role">Статус заказа товара: </label>
+                            <select name="role" th:field="*{role}" id="role">
+                                <div th:each="element : ${rolesList}">
+                                    <option th:text="${element.getName()}" th:value="${element.getName()}"></option>
+                                </div>
+                            </select>
+
+                            <input type="submit" value="Применить">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+    <script th:src="@{/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/js/index.js}" ></script>
+</body>
+</html>

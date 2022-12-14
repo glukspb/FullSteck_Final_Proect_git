@@ -1,0 +1,240 @@
+
+/* ANONIMUS product.html*/
+
+.grid_pologenie{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    text-align: center;
+    justify-content: center;
+    grid-gap: 5px;
+}
+
+.grid_tovari{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    text-align: center;
+    justify-content: center;
+    grid-gap: 5px;
+}
+
+.grid_tovar{
+    height: 450px;
+    width: 300px;
+    margin: 5px;
+    /*border-color: #13653f;*/
+    border: 1px solid #f15a22;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #424649;
+}
+
+.grid_tovari_col {
+    /*grid-column: 1 / 2;
+    grid-row: 1 / 2;*/
+    text-align: center;
+}
+
+/* USER index.html*/
+
+.grid_pologenie_user{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    text-align: center;
+    justify-content: center;
+    grid-gap: 5px;
+}
+
+.grid_tovari_user{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    text-align: center;
+    justify-content: center;
+    grid-gap: 5px;
+}
+
+.grid_tovar_user{
+    height: 510px;
+    width: 300px;
+    margin: 5px;
+    /*border-color: #13653f;*/
+    border: 1px solid #f15a22;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #424649;
+}
+
+.grid_tovari_col_user {
+    /*grid-column: 1 / 2;
+    grid-row: 1 / 2;*/
+    text-align: center;
+}
+
+/* USER ORDERs index.html*/
+
+.grid_pologenie_user_orders{
+    display: grid;
+    grid-template-columns: repeat(1, 4fr);
+    grid-template-rows: repeat(1, 1fr);
+    text-align: center;
+    justify-content: center;
+    grid-gap: 5px;
+}
+
+.grid_orders_user{
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: repeat(1, 1fr);
+    text-align: center;
+    justify-content: center;
+    grid-gap: 5px;
+}
+
+.grid_order_user{
+    height: 32vh;
+    width: 45vw;
+    margin: 5px;
+    /*border-color: #13653f;*/
+    border: 1px solid #f15a22;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #424649;
+}
+
+.grid_order_dannie_user{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    text-align: center;
+    justify-content: center;
+    grid-gap: 2px;
+}
+
+
+/* USERs users.html*/
+
+.grid_pologenie_users_admin{
+    display: grid;
+    grid-template-columns: repeat(1, 4fr);
+    grid-template-rows: repeat(1, 1fr);
+    text-align: center;
+    justify-content: center;
+    grid-gap: 5px;
+}
+
+.grid_users_admin{
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: repeat(1, 1fr);
+    text-align: center;
+    justify-content: center;
+    grid-gap: 5px;
+}
+
+.grid_user_admin{
+    height: 17vh;
+    width: 45vw;
+    margin: 5px;
+    /*border-color: #13653f;*/
+    border: 1px solid #f15a22;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #424649;
+}
+
+
+/* PRODUCT info infoProduct.html*/
+
+.grid_pologenie_product_info{
+    display: grid;
+    grid-template-columns: repeat(1, 4fr);
+    grid-template-rows: repeat(1, 1fr);
+    text-align: center;
+    justify-content: center;
+    grid-gap: 5px;
+}
+
+.grid_products_info{
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: repeat(1, 1fr);
+    text-align: center;
+    justify-content: center;
+    grid-gap: 5px;
+}
+
+.grid_product_info{
+    width: 45vw;
+    height: 45vh;
+    margin: 5px;
+    /*border-color: #13653f;*/
+    border: 1px solid #f15a22;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #424649;
+}
+
+.grid_product_info_big{
+    width: 90vw;
+    height: 90vh;
+    margin: 5px;
+    /*border-color: #13653f;*/
+    border: 1px solid #f15a22;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #424649;
+}
+
+/* PRODUCT список admin.html*/
+
+.grid_admin_pologenie_products{
+    display: grid;
+    grid-template-columns: repeat(1, 4fr);
+    grid-template-rows: repeat(1, 1fr);
+    text-align: center;
+    justify-content: center;
+    grid-gap: 5px;
+}
+
+.grid_admin_products_info{
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: repeat(1, 1fr);
+    text-align: center;
+    justify-content: center;
+    grid-gap: 5px;
+}
+
+.grid_admin_product_info{
+    width: 45vw;
+    height: 65vh;
+    margin: 5px;
+    /*border-color: #13653f;*/
+    border: 1px solid #f15a22;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #424649;
+}
+
+.grid_admin_product_opisanie{
+    width: 42vw;
+    height: 30vh;
+    margin: 5px;
+    text-align: -webkit-left;
+    overflow: auto;
+    box-shadow: inset rgba(255,255,255,0.2) 8px  8px 18px 5px,
+    inset rgba(0,0,0,0.5)      -8px -8px 18px 5px;
+    /*!*border-color: #13653f;*!*/
+    /*border: 1px solid #146c43;*/
+    /*border-radius: 15px;*/
+    /*box-shadow: 0 0 10px #424649;*/
+}
+
+/* PRODUCT add addProduct.html*/
+
+.grid_admin_pologenie_product_add{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    text-align: center;
+    justify-content: center;
+    grid-gap: 5px;
+}
+
+

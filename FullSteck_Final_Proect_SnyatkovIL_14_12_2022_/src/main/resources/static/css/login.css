@@ -1,0 +1,42 @@
+/*header {*/
+/*    display: grid;*/
+/*    grid-template-columns: 0.5fr 1fr;*/
+/*    background-color: rgb(95, 156, 247);*/
+/*    width: 100%;*/
+/*    position: sticky;*/
+/*    top: 0;*/
+/*    bottom: 0;*/
+/*    z-index: 100;*/
+/*}*/
+
+/*.GRIG_i_menu {*/
+/*    !*vertical-align: middle;*!*/
+/*    align-self: center;*/
+/*    font-size: 2.5vw;*/
+/*    font-family: Arial, Helvetica, sans-serif;*/
+/*}*/
+
+/*h1 {*/
+/*    color: black;*/
+/*    margin-left: 0.5vw;*/
+/*    font-size: 2.5vw;*/
+/*    font-family: fantasy;*/
+/*}*/
+
+
+/*h3 {*/
+/*    color: black;*/
+/*    margin-left: 0.5vw;*/
+/*    font-size: 2.5vw;*/
+/*}*/
+
+/*.*/
+
+/*.btn{*/
+/*    width: 100%;*/
+/*    !*width: 250px;*!*/
+/*    !*min-width: 50px;*!*/
+/*    !*max-height: 160px;*!*/
+/*    !*min-height: 60px;*!*/
+/*    height: 5%;*/
+/*}*/

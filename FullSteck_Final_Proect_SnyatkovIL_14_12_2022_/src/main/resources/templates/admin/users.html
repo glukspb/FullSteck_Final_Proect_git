@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список пользователей (администратор)</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/grid.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-5.2.2-dist/css/bootstrap.min.css}">
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+</head>
+<body>
+    <header >
+        <!--    <h1 style="text-align: center">Магазин комплектующих <br>для профессиональных рабочих станций</h1>-->
+        <div class="container">
+            <br>
+            <div class="row align-items-center text-center">
+                <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                    <h1 class="headerText">Магазин комплектующих <br>для профессиональных рабочих станций</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--<a href="../admin/">Вернуться в личный кабинет администратора</a>-->
+<!--    <form method="get" th:action="@{../admin/}">-->
+<!--        <input type="submit" value="Вернуться в личный кабинет администратора">-->
+<!--    </form>-->
+<!--    <br>-->
+<!--    <form method="get" th:action="@{/admin/users}">-->
+<!--        <input type="submit" value="Вернуться в список пользователей">-->
+<!--    </form>-->
+    <br>
+    <div class="container">
+        <div class="container px-5">
+            <div class="row gx-1">
+                <div class="col ">
+                    <div class="p-1 align-content-center">
+                        <div class="form-group">
+                            <div class="col-xxl-12 col-md-12 col-sm-12">
+                                <form method="get" th:action="@{../admin/}">
+                                    <input type="submit" value="Вернуться в личный кабинет администратора" class="btn btn-primary ramkaKnopki">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <!--                                border bg-light-->
+                    <div class="p-1 align-content-center">
+                        <div class="form-group">
+                            <div class="col-xxl-12 col-md-12 col-sm-12">
+                                <form method="get" th:action="@{/admin/users}">
+                                    <input type="submit" value="Вернуться в список пользователей" class="btn btn-primary ramkaKnopki">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!--    <h2>Список пользователей (администратор)</h2>-->
+    <div class="container">
+        <!--        <br>-->
+        <div class="row align-items-center text-center">
+            <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                <h2>Список пользователей (администратор)</h2>
+            </div>
+        </div>
+    </div>
+    <br>
+<!--    <h3>Список всех пользователей:</h3>-->
+    <div class="container">
+<!--        <br>-->
+        <div class="row align-items-center text-center">
+            <div class="col-xxl-12 col-md-12 col-sm-12 col-12 ">
+                <h3>Все пользователи:</h3>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="grid_pologenie_users_admin">
+            <div class="container">
+                <div class="grid_users_admin">
+                    <div th:each="user : ${users}" class="grid_user_admin">
+                        <br>
+                    <!--    <h3 th:text="'Пользователь: ' + ${user.getLogin()}"></h3>-->
+                        <a th:href="@{/admin/user/info/{id}(id=${user.getId()})}" th:text="'lonin: ' + ${user.getLogin()}"></a>
+                        <p th:text="'id: ' + ${user.getId()}"></p>
+                        <p th:text="'role: ' + ${user.getRole()}"></p>
+                        <div class="form-group">
+                            <div class="col-xxl-4 col-md-4 col-sm-4 col-4 offset-4">
+                                <form method="post" th:action="@{/admin/user/delete/{id}(id=${user.getId()})}">
+                                    <input type="submit" value="Удалить пользователя" class="btn btn-primary ramkaKnopki">
+                                </form>
+                            </div>
+                        </div>
+                    <!--    <form method="get" th:action="@{/admin/users/info/{id}(id=${user.getId()})}">-->
+                    <!--        <input type="submit" value="Вскрыть пользователя">-->
+                    <!--    </form>-->
+<!--                        <hr>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+    <script th:src="@{/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/js/index.js}" ></script>
+</body>
+</html>

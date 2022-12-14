@@ -1,0 +1,288 @@
+/*header {*/
+/*    display: grid;*/
+/*    grid-template-columns: 0.5fr 1fr;*/
+/*    background-color: rgb(95, 156, 247);*/
+/*    width: 100%;*/
+/*    position: sticky;*/
+/*    top: 0;*/
+/*    bottom: 0;*/
+/*    z-index: 100;*/
+/*}*/
+
+/*.GRIG_i_menu {*/
+/*    !*vertical-align: middle;*!*/
+/*    align-self: center;*/
+/*    font-size: 2.5vw;*/
+/*    font-family: Arial, Helvetica, sans-serif;*/
+/*}*/
+
+/*h3 {*/
+/*    color: black;*/
+/*    margin-left: 0.5vw;*/
+/*    font-size: 3.5vw;*/
+/*}*/
+
+a{
+    text-decoration: none;
+}
+
+.regisraciya{
+    align-self: center;
+}
+
+h1 {
+    color: black;
+    margin-left: 0.5vw;
+    font-size: 2.5vw;
+    font-family: fantasy;
+}
+
+
+h3 {
+    color: black;
+    margin-left: 0.5vw;
+    font-size: 2.5vw;
+}
+
+.headerText{
+    color: #0a53be;
+    text-shadow: #6c757d 5px 5px 12px;
+}
+
+.ramkaFormi{
+    border-radius: 15px;
+    box-shadow: 0 0 15px #424649;
+}
+
+.ramkaKnopki{
+    /*border-radius: 15px;*/
+    box-shadow: 0 0 15px #424649;
+}
+
+.btn{
+    width: 100%;
+    /*width: 250px;*/
+    /*min-width: 50px;*/
+    /*max-height: 160px;*/
+    /*min-height: 60px;*/
+    height: 5%;
+}
+
+/* ANONIMUS product.html*/
+
+.poziciya_kartinki_tovara{
+    width: 250px;
+    height: 300px;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.kartinka_tovara{
+    width: 250px;
+    height: 300px;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    margin-left: 1.5vw;
+    margin-top: 0.75vw;
+}
+
+.poziciya_ssilki_tovara{
+    width: 250px;
+    height: 18%;;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    margin-left: 1.25vw;
+}
+
+.poziciya_ceni_tovara{
+    width: 250px;
+    height: 10%;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+
+
+/* USER index.html*/
+
+.poziciya_kartinki_tovara_user{
+    width: 250px;
+    height: 300px;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.kartinka_tovara_user{
+    width: 250px;
+    height: 300px;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    margin-left: 1.5vw;
+    margin-top: 0.75vw;
+}
+
+.poziciya_ssilki_tovara_user{
+    width: 250px;
+    height: 16%;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    margin-left: 1.25vw;
+}
+
+.poziciya_ceni_tovara_user{
+    width: 250px;
+    height: 30px;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    margin-left: 1.25vw;
+}
+
+.poziciya_ssilki_cart_user{
+    width: 250px;
+    height: 30px;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    margin-left: 1.25vw;
+}
+
+/* USER ORDERs index.html*/
+
+.poziciya_ordera_user{
+    width: 40vw;
+    height: 60px;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.poziciya_ssilki_ordera_user{
+    /*grid-column: 2 / 2;*/
+    width: 30vw;
+    height: 16%;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-left: 1.25vw;
+}
+
+.poziciya_cena_ordera_user{
+    width: 250px;
+    height: 30px;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.poziciya_ssilki_ordera_user{
+    width: 250px;
+    height: 30px;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    margin-left: 1.25vw;
+}
+
+/* PRODUCT info infoProduct.html*/
+
+.poziciya_product_info{
+    width: 40vw;
+    height: 40vw;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.poziciya_ssilki_product_info{
+    /*grid-column: 2 / 2;*/
+    width: 30vw;
+    height: 16%;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-left: 1.25vw;
+}
+
+.razmer_kartinka_product_info{
+    margin-top: 2.5vh;
+    width: 40vw;
+    height: 40vh;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.razmer_kartinka_product_info_big{
+    margin-top: 2.5vh;
+    width: 140vw;
+    height: 140vh;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.text_opisanie_product_info{
+    font-family: "Comic Sans MS";
+    font-size: large;
+}
+
+/* PRODUCT список admin.html*/
+
+.text_razmer_title_product_admin{
+    font-family: "Comic Sans MS";
+    font-size: large;
+    width: 40vw;
+    height: 9vh;
+    overflow: auto;
+}
+
+.pole_imeni_faila_v_bd_{
+    /*width: 20vw;*/
+    font-size: 1vw;
+    overflow: hidden ;
+}
+
+/*#kartinka_product_info {width: 100px; cursor:pointer;}*/
+/*#kartinka_product_info:focus {width: 1200px;}*/
+
+#kartinka_product_info {.razmer_kartinka_product_info}
+#kartinka_product_info:focus {width: 1200px;}
+
+
+
+
+
+
+
+
+
+
+
+

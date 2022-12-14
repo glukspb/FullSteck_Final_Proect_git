@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Выборка заказов</title>
+</head>
+<body>
+<!--<br>-->
+<!--<a href="/index">Продолжить выбор товаров</a>-->
+<!--<br>orders_dlya_poiska_-->
+<br>
+<a href="/admin">На главную страницу администратора</a>
+<form method="get" th:action="@{../admin/}">
+    <input type="submit" value="Вернуться в личный кабинет администратора">
+</form>
+<br>
+<br>
+<a href="admin/istoriyaZakazov">История заказов</a>
+<form method="get" th:action="@{/admin/istoriyaZakazov}">
+    <input type="submit" value="История заказов">
+</form>
+<br>
+<br>
+<hr>
+<h3>Выборка заказов</h3>
+<div th:each="order : ${orders}">
+    <h3 th:text="'Заказ № ' + ${order.getNumber()}"></h3>
+    <img th:src="'/img/' + ${order.getProduct().imageList[0].getFileName()}" width="300px">
+    <p th:text="'Наименование: ' + ${order.getProduct().getTitle()}"></p>
+    <p th:text="'Количество: ' + ${order.getCount()}"></p>
+    <p th:text="'Цена: ' + ${order.getPrice()}"></p>
+    <p th:text="'Дата заказа: ' + ${#temporals.format(order.getDateTime(), 'dd-MMM-yyyy')}"></p>
+    <p th:text="'Статус: ' + ${order.getStatus()}"></p>
+    <hr>
+</div>
+
+<a href="/index">Продолжить выбор товаров</a>
+<br>
+<br>
+</body>
+</html>
